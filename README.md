@@ -28,3 +28,6 @@ src/
 ├── repository/ # Camada de acesso a dados
 ├── service/ # Regras de negócio
 └── util/ # Utilitários
+
+
+
