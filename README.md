@@ -1,3 +1,11 @@
+# 📚 Livraria Online - Projeto Java
+
+![Java](https://img.shields.io/badge/Java-11%2F17-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Completo-brightgreen)
+
+Um sistema completo de livraria online desenvolvido em Java...
+
 # livraria-online-java
 Projeto de Livraria Online em Java - Programação II
 
