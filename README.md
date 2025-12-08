@@ -1,41 +1,65 @@
-# 📚 Livraria Online - Projeto Java
+# 📚 Livraria Online – Projeto Java (Programação II)
 
-![Java](https://img.shields.io/badge/Java-11%2F17-blue)
+![Java](https://img.shields.io/badge/Java-17-blue)
+![JUnit](https://img.shields.io/badge/JUnit-5-red)
 ![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Completo-brightgreen)
+![Status](https://img.shields.io/badge/Status-100%25_Concluído-brightgreen)
 
-Um sistema completo de livraria online desenvolvido em Java...
+Sistema completo de **Livraria Online** desenvolvido em Java, simulando um ambiente real com autenticação, catálogo, carrinho de compras, checkout, pagamentos (cartão, PIX, boleto), nota fiscal, controle de estoque e relatórios.  
+Desenvolvido para a disciplina **Programação II**, com foco em **POO, modularização, camadas e persistência**.
 
-# livraria-online-java
-Projeto de Livraria Online em Java - Programação II
+---
 
-# Livraria Online - Projeto Java
+# ✨ Funcionalidades
 
-## 📚 Sobre o Projeto
-Sistema completo de livraria online desenvolvido em Java para a disciplina de Programação II.
+## 🔐 Autenticação
+- Cadastro de clientes  
+- Login por email e senha  
+- Recuperação de senha via **CPF** ou **email**  
+- Níveis de acesso (visitante vs usuário logado)
 
-## 🚀 Funcionalidades
-- ✅ Cadastro e login de clientes
-- ✅ Catálogo de livros com busca
-- ✅ Carrinho de compras com quantidades
-- ✅ Sistema de pagamento (Cartão, PIX, Boleto)
-- ✅ Nota fiscal eletrônica
-- ✅ Controle de estoque automático
-- ✅ Persistência em arquivos
+## 📚 Catálogo de Livros
+- Listagem completa  
+- Busca por **título**  
+- Busca por **ISBN**  
+- Detalhes do livro
 
-## 🛠️ Tecnologias
-- Java 11/17
-- JUnit 5
-- Serialização Java
-- Programação Orientada a Objetos
+## 🛒 Carrinho de Compras
+- Adicionar itens por ISBN  
+- Alterar quantidades  
+- Remover itens  
+- Calcular total  
+- Persistência durante a sessão
 
-## 📁 Estrutura do Projeto
-src/
-├── app/ # Classe principal e menus
-├── model/ # Entidades (Livro, Cliente, Pedido, etc)
-├── repository/ # Camada de acesso a dados
-├── service/ # Regras de negócio
-└── util/ # Utilitários
+## 💳 Checkout e Pagamentos
+- Pagamento via **Cartão de Crédito**  
+- Pagamento via **PIX** (QR code textual fictício)  
+- Pagamento via **Boleto Bancário**  
+- Desconto automático para PIX  
+- Geração de **Nota Fiscal** pós-compra
 
+## 📦 Estoque
+- Baixa automática após compra  
+- Bloqueio se o estoque estiver insuficiente  
+- Relatório de inventário
 
+## 📊 Relatórios
+- Relatório de vendas  
+- Relatório do estoque  
+- Histórico do cliente  
+- Total faturado
 
+---
+
+# 🛠️ Tecnologias
+
+- **Java 17 (LTS)**  
+- **JUnit 5** (testes)  
+- **Coleções Java:** List, Map, Set  
+- **Serialização de objetos**  
+- **Arquitetura em camadas (MVC simplificado)**  
+- **ANSI colors** para UI interativa
+
+---
+
+# 🏗️ Arquitetura do Projeto
