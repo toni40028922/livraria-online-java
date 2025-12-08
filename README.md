@@ -10,58 +10,79 @@ Desenvolvido para a disciplina **Programação II**, com foco em **POO, modulari
 
 ---
 
-# ✨ Funcionalidades
+## ✨ Funcionalidades Principais
 
-## 🔐 Autenticação
-- Cadastro de clientes  
-- Login por email e senha  
-- Recuperação de senha via **CPF** ou **email**  
-- Níveis de acesso (visitante vs usuário logado)
+### 🔐 Autenticação & Usuários
+- Cadastro completo de clientes (CPF, nome, email, senha)
+- Login seguro com verificação de senha
+- Recuperação de senha via CPF/email
+- Separação: Visitante (só visualiza) vs Cliente (compra)
 
-## 📚 Catálogo de Livros
-- Listagem completa  
-- Busca por **título**  
-- Busca por **ISBN**  
-- Detalhes do livro
+### 📚 Catálogo Inteligente
+- Listagem completa com estoque em tempo real
+- Busca rápida por **ISBN** (Map para O(1))
+- Busca por **título** ou **autor**
+- Detalhes completos de cada livro
 
-## 🛒 Carrinho de Compras
-- Adicionar itens por ISBN  
-- Alterar quantidades  
-- Remover itens  
-- Calcular total  
+### 🛒 Carrinho de Compras
+- Adicionar/remover livros com quantidades
+- Cálculo automático do total
 - Persistência durante a sessão
+- Validação de estoque em tempo real
 
-## 💳 Checkout e Pagamentos
-- Pagamento via **Cartão de Crédito**  
-- Pagamento via **PIX** (QR code textual fictício)  
-- Pagamento via **Boleto Bancário**  
-- Desconto automático para PIX  
-- Geração de **Nota Fiscal** pós-compra
+### 💳 Sistema de Pagamento
+- **Cartão de Crédito** (validação de número)
+- **PIX** com código QR textual
+- **Boleto Bancário** simulado
+- Processamento com 90% de aprovação simulada
 
-## 📦 Estoque
-- Baixa automática após compra  
-- Bloqueio se o estoque estiver insuficiente  
-- Relatório de inventário
+### 📦 Gestão de Estoque
+- Baixa automática após compras
+- Bloqueio de vendas sem estoque
+- Relatório de inventário atualizado
 
-## 📊 Relatórios
-- Relatório de vendas  
-- Relatório do estoque  
-- Histórico do cliente  
+### 📊 Relatórios & Análises
+- Histórico completo de vendas
+- Relatório de estoque por ISBN
 - Total faturado
+- Pedidos por cliente
 
 ---
 
-# 🛠️ Tecnologias
+## 🚀 Funcionalidades Extras (além do exigido)
 
-- **Java 17 (LTS)**  
-- **JUnit 5** (testes)  
-- **Coleções Java:** List, Map, Set  
-- **Serialização de objetos**  
-- **Arquitetura em camadas (MVC simplificado)**  
-- **ANSI colors** para UI interativa
+✅ **Sistema de pagamento completo** (Cartão, PIX, Boleto)  
+✅ **Nota Fiscal** profissional com detalhes  
+✅ **Recuperação de senha** simulada  
+✅ **Interface colorida** (ANSI colors)  
+✅ **Validações** de CPF, email, cartão  
+✅ **Dados de exemplo** pré-cadastrados  
+✅ **Menu intuitivo** com emojis e fluxo guiado
 
 ---
 
-# 🏗️ Arquitetura do Projeto
+## 🛠️ Tecnologias Utilizadas
 
-src/ │ ├── app/              → Classe Main e menus principais ├── model/            → Entidades (Livro, Cliente, Pedido, Carrinho…) ├── repository/       → Camada de dados e persistência ├── service/          → Lógica de negócio (Catálogo, Login, Carrinho…) └── util/             → Utilitários (persistência, validações)
+- **Java 17 (LTS)** – Linguagem principal
+- **JUnit 5** – Testes unitários
+- **Coleções Java** – List, Map, Set com uso justificado
+- **Serialização** – Persistência em arquivos `.db`
+- **ANSI Colors** – Interface colorida no terminal
+- **Arquitetura em Camadas** – Separação MVC-like
+
+---
+
+## 🏗️ Arquitetura do Projeto
+
+LivrariaOnline/
+├──src/
+│├── app/           # Interface com usuário (menus)
+│├── model/         # Entidades (Livro, Cliente, Pedido...)
+│├── repository/    # Persistência em arquivos
+│├── service/       # Regras de negócio
+│└── util/          # Utilitários
+├──test/              # Testes unitários (JUnit 5)
+├──.gitignore         # Configuração Git
+├──LICENSE            # Licença MIT
+└──README.md          # Esta documentação
+
