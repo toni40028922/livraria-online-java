@@ -1,4 +1,4 @@
-package service;
+package service; // ATUALIZADO EM 09/12/2025
 
 import model.Livro;
 import repository.LivroRepository;
