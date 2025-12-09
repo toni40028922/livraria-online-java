@@ -1,4 +1,4 @@
-package model;
+package model; // ATUALIZADO EM 09/12/2025
 
 import java.io.Serializable;
 import java.util.HashSet;
