@@ -1,4 +1,4 @@
-package model;
+package model; // ATUALIZADO EM 09/12/2025
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -22,39 +22,36 @@ public class NotaFiscal implements Serializable {
         this.tipo = tipo;
     }
     
-    public void imprimir() {
-        System.out.println("\n" + "=".repeat(50));
-        System.out.println("            NOTA FISCAL");
-        System.out.println("=".repeat(50));
-        System.out.println("Número: " + numero);
-        System.out.println("Data: " + dataEmissao);
-        System.out.println("Cliente: " + cliente.getNome());
-        System.out.println("CPF: " + cliente.getCpf());
-        System.out.println("Tipo: " + tipo);
-        System.out.println("-".repeat(50));
+    public String imprimir() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n").append("=".repeat(50)).append("\n");
+        sb.append("            NOTA FISCAL\n");
+        sb.append("=".repeat(50)).append("\n");
+        sb.append("Número: ").append(numero).append("\n");
+        sb.append("Data: ").append(dataEmissao).append("\n");
+        sb.append("Cliente: ").append(cliente.getNome()).append("\n");
+        sb.append("CPF: ").append(cliente.getCpf()).append("\n");
+        sb.append("Tipo: ").append(tipo).append("\n");
+        sb.append("-".repeat(50)).append("\n");
         
-        if (pedido.getItens() instanceof Map) {
-            // Se for Map (com quantidades)
-            Map<Livro, Integer> itens = (Map<Livro, Integer>) pedido.getItens();
-            for (Map.Entry<Livro, Integer> entry : itens.entrySet()) {
-                Livro livro = entry.getKey();
-                int quantidade = entry.getValue();
-                double subtotal = livro.getPreco() * quantidade;
-                System.out.printf("%s x%d = R$ %.2f\n", 
-                    livro.getTitulo(), quantidade, subtotal);
-            }
-        } else {
-            // Se for List (1 unidade cada)
-            for (Livro livro : pedido.getItens()) {
-                System.out.printf("%s = R$ %.2f\n", livro.getTitulo(), livro.getPreco());
-            }
+        // Adiciona os itens do pedido
+        Map<Livro, Integer> itens = pedido.getItens();
+        
+        for (Map.Entry<Livro, Integer> entry : itens.entrySet()) {
+            Livro livro = entry.getKey();
+            int quantidade = entry.getValue();
+            double subtotal = livro.getPreco() * quantidade;
+            sb.append(String.format("%s x%d = R$ %.2f\n", 
+                livro.getTitulo(), quantidade, subtotal));
         }
         
-        System.out.println("-".repeat(50));
-        System.out.printf("TOTAL: R$ %.2f\n", pedido.getTotal());
-        System.out.println("=".repeat(50));
-        System.out.println("Obrigado pela preferência!");
-        System.out.println("=".repeat(50) + "\n");
+        sb.append("-".repeat(50)).append("\n");
+        sb.append(String.format("TOTAL: R$ %.2f\n", pedido.getTotal()));
+        sb.append("=".repeat(50)).append("\n");
+        sb.append("Obrigado pela preferência!\n");
+        sb.append("=".repeat(50)).append("\n");
+        
+        return sb.toString();
     }
     
     // Getters
