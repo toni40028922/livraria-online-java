@@ -1,36 +1,59 @@
-package model;
+package model; // ATUALIZADO EM 09/12/2025
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Carrinho implements Serializable {
     private static final long serialVersionUID = 1L;
     private String clienteCpf;
-    private List<Livro> itens = new ArrayList<>();
-
+    private Map<Livro, Integer> itens = new HashMap<>(); // ← MAP, não List!
+    
     public Carrinho() {}
-
+    
     public Carrinho(String clienteCpf) {
         this.clienteCpf = clienteCpf;
     }
-
+    
     public String getClienteCpf() { return clienteCpf; }
-
-    public List<Livro> getItens() { return itens; }
-
-    public void adicionar(Livro l) { itens.add(l); }
-
-    public boolean removerPorIsbn(String isbn) {
-        return itens.removeIf(l -> l.getIsbn().equals(isbn));
+    public Map<Livro, Integer> getItens() { return itens; }
+    
+    public void adicionar(Livro livro, int quantidade) {
+        itens.put(livro, itens.getOrDefault(livro, 0) + quantidade);
     }
-
-    public double total() {
-        return itens.stream().mapToDouble(Livro::getPreco).sum();
+    
+    public boolean remover(Livro livro, int quantidade) {
+        if (!itens.containsKey(livro)) return false;
+        
+        int qtdAtual = itens.get(livro);
+        if (quantidade >= qtdAtual) {
+            itens.remove(livro);
+        } else {
+            itens.put(livro, qtdAtual - quantidade);
+        }
+        return true;
     }
-
+    
+    // ADICIONE ESTES:
+    public double calcularTotal() {
+        double total = 0;
+        for (Map.Entry<Livro, Integer> entry : itens.entrySet()) {
+            total += entry.getKey().getPreco() * entry.getValue();
+        }
+        return total;
+    }
+    
+    public void limpar() {
+        itens.clear();
+    }
+    
+    public boolean estaVazio() {
+        return itens.isEmpty();
+    }
+    
     @Override
     public String toString() {
-        return String.format("Carrinho[%s] total=R$ %.2f itens=%d", clienteCpf, total(), itens.size());
+        return String.format("Carrinho[%s] total=R$ %.2f itens=%d", 
+                           clienteCpf, calcularTotal(), itens.size());
     }
 }
