@@ -95,7 +95,7 @@ LivrariaOnline/
 
 ### Samuel Crementino da Costa 
 - **Curso:** Tecnologia em Telemática
-- **GitHub:** [@samuelcrementino](https://github.com/samuelcrementino)
+- **GitHub:** [@SamuelCrementino](https://github.com/SamuelCrementino)
 - **Contribuições:** Modelos de dados, testes, documentação, segurança
 
 ## 📄 Licença
