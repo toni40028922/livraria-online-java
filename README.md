@@ -86,3 +86,23 @@ LivrariaOnline/
 ├──LICENSE            # Licença MIT
 └──README.md          # Esta documentação
 
+## 👥 Autores
+
+### ToniJosué Barbosa de Araújo
+- **Curso:** Tecnologia em Telemática
+- **GitHub:** [@TonTec](https://github.com/TonTec)
+- **Contribuições:** Arquitetura do sistema, serviços principais, lógica de pagamento
+
+### Samuel Crementino da Costa 
+- **Curso:** Tecnologia em Telemática
+- **GitHub:** [@samuelcrementino](https://github.com/samuelcrementino) *(ou username dele)*
+- **Contribuições:** Modelos de dados, testes, documentação, segurança
+
+## 📄 Licença
+
+Este projeto está licenciado sob a **MIT License** - 
+veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+*Projeto desenvolvido como trabalho acadêmico para a 
+disciplina de Programação II.*
+
