@@ -1,4 +1,8 @@
-<img width="435" height="332" alt="Image" src="https://github.com/user-attachments/assets/8d878717-6fc7-4c9b-9ca0-b0b4a067f84b" />
+## 🖼️ Demonstração Visual
+
+| Menu Principal | Catálogo de Livros |
+|----------------|-------------------|
+|<img width="435" height="332" alt="Image" src="https://github.com/user-attachments/assets/8d878717-6fc7-4c9b-9ca0-b0b4a067f84b" /> |
 
 # 📚 Livraria Online – Projeto Java (Programação II)
 
