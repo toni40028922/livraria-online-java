@@ -93,9 +93,9 @@ LivrariaOnline/
 - **GitHub:** [@Toni-araujo](https://github.com/Toni-araujo)
 - **Contribuições:** Arquitetura do sistema, serviços principais, lógica de pagamento
 
-### Samuel Crementino da Costa 
+### Samuel Clementino da Costa 
 - **Curso:** Tecnologia em Telemática
-- **GitHub:** [@SamuelCrementino](https://github.com/SamuelCrementino)
+- **GitHub:** [@SamuelClementino](https://github.com/SamuelClementino)
 - **Contribuições:** Modelos de dados, testes, documentação, segurança
 
 ## 📄 Licença
