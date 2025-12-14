@@ -1,3 +1,5 @@
+<img width="493" height="368" alt="Image" src="https://github.com/user-attachments/assets/c591b443-9db2-4ebd-a34f-af33ae45c44d" />
+
 # 📚 Livraria Online – Projeto Java (Programação II)
 
 ![Java](https://img.shields.io/badge/Java-17-blue)
