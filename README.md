@@ -86,6 +86,8 @@ LivrariaOnline/
 ├──LICENSE            # Licença MIT
 └──README.md          # Esta documentação
 
+---
+
 ## 🖼️ Demonstração Visual
 
 | Menu Principal | Catálogo de Livros |
