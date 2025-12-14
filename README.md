@@ -74,43 +74,88 @@ Desenvolvido para a disciplina **Programação II**, com foco em **POO, modulari
 
 ## 🏗️ Arquitetura do Projeto
 
+```
 LivrariaOnline/
-├──src/
-│├── app/           # Interface com usuário (menus)
-│├── model/         # Entidades (Livro, Cliente, Pedido...)
-│├── repository/    # Persistência em arquivos
-│├── service/       # Regras de negócio
-│└── util/          # Utilitários
-├──test/              # Testes unitários (JUnit 5)
-├──.gitignore         # Configuração Git
-├──LICENSE            # Licença MIT
-└──README.md          # Esta documentação
+├── src/
+│   ├── app/           # Interface com usuário (Main + menus)
+│   ├── model/         # Entidades (Livro, Cliente, Pedido...)
+│   ├── repository/    # Persistência em arquivos (.db)
+│   ├── service/       # Regras de negócio
+│   └── util/          # Utilitários
+├── test/              # Testes unitários (JUnit 5)
+├── .gitignore         # Configuração Git
+├── LICENSE            # Licença MIT
+└── README.md          # Esta documentação
+```
 
 ---
 
-## 🖼️ Demonstração Visual
+## ▶️ Como Executar
 
-| Menu Principal | Catálogo de Livros |
-|----------------|-------------------|
-|<img width="435" height="332" alt="Image" src="https://github.com/user-attachments/assets/8d878717-6fc7-4c9b-9ca0-b0b4a067f84b" /> | <img width="553" height="355" alt="Image" src="https://github.com/user-attachments/assets/d8a6b142-e6d1-4141-8bff-1ca30c029674" /> 
+### No Eclipse:
+1. **Importe** o projeto: `File → Import → Existing Projects into Workspace`
+2. **Execute** a classe: `app.Main.java`
+3. **Use dados de exemplo**:
+   - CPF: `12345678901`
+   - Senha: `senha123`
+
+### Via JAR Executável:
+1. Exporte: `File → Export → Runnable JAR File`
+2. Selecione: `app.Main` como Launch Configuration
+3. Execute: `java -jar LivrariaOnline.jar`
+
+---
+
+## ✅ Checklist de Requisitos Atendidos
+
+### Obrigatórios (exigidos pelo professor):
+- [x] CRUD completo de livros/autores
+- [x] Busca por ISBN e título
+- [x] Carrinho de compras funcional
+- [x] Checkout com geração de Pedido
+- [x] Atualização automática de estoque
+- [x] Relatórios de vendas e inventário
+- [x] Persistência em arquivos
+- [x] Uso justificado de List, Map, Set
+- [x] Encapsulamento correto das classes
+- [x] Testes unitários JUnit
+- [x] JAR executável
+- [x] Documentação completa
+
+### Extras Implementados:
+- [x] Sistema de autenticação com senha
+- [x] Múltiplos métodos de pagamento
+- [x] Nota fiscal eletrônica
+- [x] Interface amigável com cores
+- [x] Validações de dados de entrada
+- [x] Recuperação de conta
+- [x] Dados de exemplo para testes rápidos
+
+---
 
 ## 👥 Autores
 
-### ToniJosué Barbosa de Araújo
+### 👨‍💻 ToniJosué Barbosa de Araújo
 - **Curso:** Tecnologia em Telemática
 - **GitHub:** [@Toni-araujo](https://github.com/Toni-araujo)
-- **Contribuições:** Arquitetura do sistema, serviços principais, lógica de pagamento
+- **Contribuições:** Arquitetura geral, sistema de pagamento, checkout, interface de usuário, integração de serviços
 
-### Samuel Clementino da Costa 
+### 👨‍💻 Samuel Clementino da Costa 
 - **Curso:** Tecnologia em Telemática
 - **GitHub:** [@SamuelClementino](https://github.com/SamuelClementino)
-- **Contribuições:** Modelos de dados, testes, documentação, segurança
+- **Contribuições:** Modelos de dados (Livro, Cliente, Pedido), sistema de estoque, validações, testes, documentação
+
+### 🤝 Trabalho em Equipe
+Este projeto foi desenvolvido em parceria, com:
+- Revisões de código mútuas
+- Divisão clara de responsabilidades
+- Testes colaborativos
+- Documentação compartilhada
+
+---
 
 ## 📄 Licença
 
-Este projeto está licenciado sob a **MIT License** - 
-veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-*Projeto desenvolvido como trabalho acadêmico para a 
-disciplina de Programação II.*
-
+*Projeto desenvolvido como trabalho acadêmico para a disciplina de Programação II do curso de Tecnologia em Telemática.*
