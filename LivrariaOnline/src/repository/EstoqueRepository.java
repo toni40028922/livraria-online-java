@@ -4,7 +4,7 @@ import util.PersistenceUtil;
 import java.util.*;
 
 public class EstoqueRepository {
-    private Map<String, Integer> estoque = new HashMap<>(); // chave = isbn, valor = quantidade
+    private Map<String, Integer> estoque = new HashMap<>();
     private final String FILE = "estoque.db";
 
     @SuppressWarnings("unchecked")
