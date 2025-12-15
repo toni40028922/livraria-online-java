@@ -10,7 +10,7 @@ public class CheckoutService {
     private EstoqueRepository estoqueRepo = new EstoqueRepository();
     private PedidoRepository pedidoRepo = new PedidoRepository();
     
-    // Método principal
+    // Mtodo principal
     public NotaFiscal checkout(Carrinho carrinho, String tipo, Cliente cliente) {
         // 1. Verificar estoque
         if (!verificarEstoque(carrinho)) {
@@ -32,7 +32,7 @@ public class CheckoutService {
         return notaFiscal;
     }
     
-    // Método para checkout com pagamento
+    // Mtodo para checkout com pagamento
     public boolean checkoutComPagamento(Carrinho carrinho, String tipo, Cliente cliente, 
                                        Pagamento.MetodoPagamento metodo) {
         
@@ -58,7 +58,7 @@ public class CheckoutService {
             carrinho.limpar(); // esta linha ainda continua com x
             return true;
         } else {
-            System.out.println("❌ Pagamento recusado!");
+            System.out.println(" Pagamento recusado!");
             return false;
         }
     }
@@ -85,3 +85,4 @@ public class CheckoutService {
         }
     }
 }
+

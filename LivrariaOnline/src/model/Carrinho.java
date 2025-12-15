@@ -7,7 +7,7 @@ import java.util.Map;
 public class Carrinho implements Serializable {
     private static final long serialVersionUID = 1L;
     private String clienteCpf;
-    private Map<Livro, Integer> itens = new HashMap<>(); // ← MAP, não List!
+    private Map<Livro, Integer> itens = new HashMap<>();
     
     public Carrinho() {}
     
@@ -57,3 +57,4 @@ public class Carrinho implements Serializable {
                            clienteCpf, calcularTotal(), itens.size());
     }
 }
+

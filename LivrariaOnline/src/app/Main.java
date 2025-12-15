@@ -1,4 +1,4 @@
-package app; // ATUALIZAÇÃO 09/12/2025  ||  (ATUALIZAÇÃO RECENTE - 13/12/2025)
+package app; // ATUALIZAO 09/12/2025  ||  (ATUALIZAO RECENTE - 13/12/2025)
 
 import model.*;
 import service.*;
@@ -46,7 +46,7 @@ public class Main {
             }
         }
         
-        System.out.println(VERDE + "\nObrigado por usar a Livraria Online! Até a próxima!" + RESET);
+        System.out.println(VERDE + "\nObrigado por usar a Livraria Online! At a prxima!" + RESET);
         sc.close();
     }
     
@@ -55,13 +55,13 @@ public class Main {
         System.out.println(AMARELO + "\n" + "=".repeat(50) + RESET);
         System.out.println(CYAN + "           MENU VISITANTE           " + RESET);
         System.out.println(AMARELO + "=".repeat(50) + RESET);
-        System.out.println("1. 📚 Ver catálogo de livros");
-        System.out.println("2. 🔍 Buscar livro");
-        System.out.println("3. 📝 Cadastrar nova conta");
-        System.out.println("4. 🔑 Fazer login");
-        System.out.println("5. 🔓 Recuperar senha");
-        System.out.println("0. ❌ Sair do sistema");
-        System.out.print(VERDE + "\nEscolha uma opção: " + RESET);
+        System.out.println("1.  Ver catlogo de livros");
+        System.out.println("2.  Buscar livro");
+        System.out.println("3.  Cadastrar nova conta");
+        System.out.println("4.  Fazer login");
+        System.out.println("5.  Recuperar senha");
+        System.out.println("0.  Sair do sistema");
+        System.out.print(VERDE + "\nEscolha uma opo: " + RESET);
         
         String opcao = sc.nextLine();
         
@@ -84,7 +84,7 @@ public class Main {
             case "0":
                 return false; // Sai do sistema
             default:
-                System.out.println(VERMELHO + "Opção inválida! Tente novamente." + RESET);
+                System.out.println(VERMELHO + "Opo invlida! Tente novamente." + RESET);
         }
         return true; // Continua no sistema
     }
@@ -96,18 +96,18 @@ public class Main {
         System.out.println(AMARELO + "\n" + "=".repeat(50) + RESET);
         System.out.println(CYAN + "           MENU CLIENTE           " + RESET);
         System.out.println(AMARELO + "=".repeat(50) + RESET);
-        System.out.println("👤 Usuário: " + VERDE + cliente.getNome() + RESET);
-        System.out.println("📧 Email: " + cliente.getEmail());
-        System.out.println("\n1. 📚 Ver catálogo");
-        System.out.println("2. 🔍 Buscar livro");
-        System.out.println("3. 🛒 Gerenciar carrinho");
-        System.out.println("4. 💳 Finalizar compra");
-        System.out.println("5. 📄 Ver Nota Fiscal da última compra");
-        System.out.println("6. 📋 Meus pedidos");
-        System.out.println("7. ⚙️  Meu perfil");
-        System.out.println("8. 🔒 Logout");
-        System.out.println("0. ❌ Sair do sistema");
-        System.out.print(VERDE + "\nEscolha uma opção: " + RESET);
+        System.out.println(" Usurio: " + VERDE + cliente.getNome() + RESET);
+        System.out.println(" Email: " + cliente.getEmail());
+        System.out.println("\n1.  Ver catlogo");
+        System.out.println("2.  Buscar livro");
+        System.out.println("3.  Gerenciar carrinho");
+        System.out.println("4.  Finalizar compra");
+        System.out.println("5.  Ver Nota Fiscal da ltima compra");
+        System.out.println("6.  Meus pedidos");
+        System.out.println("7.   Meu perfil");
+        System.out.println("8.  Logout");
+        System.out.println("0.  Sair do sistema");
+        System.out.print(VERDE + "\nEscolha uma opo: " + RESET);
         
         String opcao = sc.nextLine();
         
@@ -140,22 +140,22 @@ public class Main {
             case "0":
                 return false; // Sai do sistema
             default:
-                System.out.println(VERMELHO + "Opção inválida! Tente novamente." + RESET);
+                System.out.println(VERMELHO + "Opo invlida! Tente novamente." + RESET);
         }
         return true; // Continua no sistema
     }
     
-    // ========== FUNÇÕES DO VISITANTE ==========
+    // ========== FUNES DO VISITANTE ==========
     
     private static void cadastrarCliente() {
         System.out.println(CYAN + "\n=== CADASTRO DE NOVO CLIENTE ===" + RESET);
         
-        System.out.print("CPF (apenas números): ");
+        System.out.print("CPF (apenas nmeros): ");
         String cpf = sc.nextLine().trim();
         
-        // Validar se CPF já existe
+        // Validar se CPF j existe
         if (cpf.length() != 11 || !cpf.matches("\\d+")) {
-            System.out.println(VERMELHO + "CPF inválido! Use 11 números." + RESET);
+            System.out.println(VERMELHO + "CPF invlido! Use 11 nmeros." + RESET);
             return;
         }
         
@@ -166,11 +166,11 @@ public class Main {
         String email = sc.nextLine().trim();
         
         if (!email.contains("@")) {
-            System.out.println(VERMELHO + "Email inválido!" + RESET);
+            System.out.println(VERMELHO + "Email invlido!" + RESET);
             return;
         }
         
-        System.out.print("Senha (mínimo 4 caracteres): ");
+        System.out.print("Senha (mnimo 4 caracteres): ");
         String senha = sc.nextLine().trim();
         
         if (senha.length() < 4) {
@@ -179,10 +179,10 @@ public class Main {
         }
         
         if (auth.cadastrar(cpf, nome, email, senha)) {
-            System.out.println(VERDE + "\n✅ Cadastro realizado com sucesso!" + RESET);
-            System.out.println("Faça login para começar a comprar.");
+            System.out.println(VERDE + "\n Cadastro realizado com sucesso!" + RESET);
+            System.out.println("Faa login para comear a comprar.");
         } else {
-            System.out.println(VERMELHO + "\n❌ CPF já cadastrado no sistema!" + RESET);
+            System.out.println(VERMELHO + "\n CPF j cadastrado no sistema!" + RESET);
         }
     }
     
@@ -197,16 +197,16 @@ public class Main {
         
         if (auth.login(cpf, senha)) {
             Cliente cliente = auth.getClienteLogado();
-            System.out.println(VERDE + "\n✅ Login realizado com sucesso!" + RESET);
+            System.out.println(VERDE + "\n Login realizado com sucesso!" + RESET);
             System.out.println("Bem-vindo(a), " + cliente.getNome() + "!");
         } else {
-            System.out.println(VERMELHO + "\n❌ CPF ou senha incorretos!" + RESET);
+            System.out.println(VERMELHO + "\n CPF ou senha incorretos!" + RESET);
             System.out.println("Verifique seus dados ou cadastre-se.");
         }
     }
     
     private static void recuperarSenha() {
-        System.out.println(CYAN + "\n=== RECUPERAÇÃO DE SENHA ===" + RESET);
+        System.out.println(CYAN + "\n=== RECUPERAO DE SENHA ===" + RESET);
         
         System.out.print("Digite seu CPF: ");
         String cpf = sc.nextLine().trim();
@@ -215,17 +215,17 @@ public class Main {
         String email = sc.nextLine().trim();
         
         if (auth.recuperarSenha(cpf, email)) {
-            System.out.println(VERDE + "\n✅ Instruções enviadas para seu email!" + RESET);
+            System.out.println(VERDE + "\n Instrues enviadas para seu email!" + RESET);
         } else {
-            System.out.println(VERMELHO + "\n❌ Dados não encontrados!" + RESET);
-            System.out.println("Verifique se o CPF e email estão corretos.");
+            System.out.println(VERMELHO + "\n Dados no encontrados!" + RESET);
+            System.out.println("Verifique se o CPF e email esto corretos.");
         }
     }
     
-    // ========== FUNÇÕES DO CATÁLOGO ==========
+    // ========== FUNES DO CATLOGO ==========
     
     private static void listarCatalogo() {
-        System.out.println(CYAN + "\n=== CATÁLOGO DE LIVROS ===" + RESET);
+        System.out.println(CYAN + "\n=== CATLOGO DE LIVROS ===" + RESET);
         
         List<Livro> catalogo = catalog.listarCatalogo();
         
@@ -238,12 +238,12 @@ public class Main {
             for (int i = 0; i < catalogo.size(); i++) {
                 Livro livro = catalogo.get(i);
                 int estoque = catalog.estoque(livro.getIsbn());
-                String statusEstoque = estoque > 0 ? VERDE + "Disponível" + RESET : VERMELHO + "Esgotado" + RESET;
+                String statusEstoque = estoque > 0 ? VERDE + "Disponvel" + RESET : VERMELHO + "Esgotado" + RESET;
                 
                 System.out.printf("%d. %s\n", i + 1, livro.getTitulo());
                 System.out.printf("   Autor: %s\n", livro.getAutores());
-                System.out.printf("   ISBN: %s | Gênero: %s\n", livro.getIsbn(), livro.getGenero());
-                System.out.printf("   Preço: R$ %.2f | Estoque: %d (%s)\n", 
+                System.out.printf("   ISBN: %s | Gnero: %s\n", livro.getIsbn(), livro.getGenero());
+                System.out.printf("   Preo: R$ %.2f | Estoque: %d (%s)\n", 
                     livro.getPreco(), estoque, statusEstoque);
                 System.out.println("-".repeat(60));
             }
@@ -256,8 +256,8 @@ public class Main {
         while (buscando) {
             System.out.println(CYAN + "\n=== BUSCAR LIVRO ===" + RESET);
             System.out.println("1. Buscar por ISBN");
-            System.out.println("2. Buscar por título");
-            System.out.println("0. ↩️  Voltar ao menu");
+            System.out.println("2. Buscar por ttulo");
+            System.out.println("0.   Voltar ao menu");
             System.out.print(VERDE + "Escolha: " + RESET);
             
             String opcao = sc.nextLine();
@@ -284,7 +284,7 @@ public class Main {
                             buscando = false;
                         }
                     } else {
-                        System.out.println(VERMELHO + "Livro não encontrado!" + RESET);
+                        System.out.println(VERMELHO + "Livro no encontrado!" + RESET);
                         System.out.print("Tentar novamente? (S/N): ");
                         String tentar = sc.nextLine().trim();
                         if (!tentar.equalsIgnoreCase("S")) {
@@ -294,7 +294,7 @@ public class Main {
                     break;
                     
                 case "2":
-                    System.out.print("Digite parte do título (ou 'voltar'): ");
+                    System.out.print("Digite parte do ttulo (ou 'voltar'): ");
                     String titulo = sc.nextLine().trim();
                     
                     if (titulo.equalsIgnoreCase("voltar")) {
@@ -305,7 +305,7 @@ public class Main {
                     List<Livro> resultados = catalog.buscarPorTitulo(titulo);
                     exibirResultadosBusca(resultados);
                     
-                    // Se não encontrou, pergunta se quer continuar
+                    // Se no encontrou, pergunta se quer continuar
                     if (resultados.isEmpty()) {
                         System.out.print("\nDeseja tentar outra busca? (S/N): ");
                         String outra = sc.nextLine().trim();
@@ -321,18 +321,18 @@ public class Main {
                     break;
                     
                 default:
-                    System.out.println(VERMELHO + "Opção inválida! Digite 1, 2 ou 0." + RESET);
+                    System.out.println(VERMELHO + "Opo invlida! Digite 1, 2 ou 0." + RESET);
             }
         }
     }
     
     private static void exibirDetalhesLivro(Livro livro) {
         System.out.println(CYAN + "\n=== DETALHES DO LIVRO ===" + RESET);
-        System.out.println("Título: " + livro.getTitulo());
+        System.out.println("Ttulo: " + livro.getTitulo());
         System.out.println("ISBN: " + livro.getIsbn());
         System.out.println("Autor(es): " + livro.getAutores());
-        System.out.println("Gênero: " + livro.getGenero());
-        System.out.printf("Preço: R$ %.2f\n", livro.getPreco());
+        System.out.println("Gnero: " + livro.getGenero());
+        System.out.printf("Preo: R$ %.2f\n", livro.getPreco());
         System.out.println("Estoque: " + catalog.estoque(livro.getIsbn()) + " unidades");
     }
     
@@ -349,7 +349,7 @@ public class Main {
                     i + 1, livro.getTitulo(), livro.getAutores(), livro.getPreco());
             }
             
-            System.out.print("\nDeseja ver detalhes de algum livro? (número ou 0 para voltar): ");
+            System.out.print("\nDeseja ver detalhes de algum livro? (nmero ou 0 para voltar): ");
             String escolha = sc.nextLine();
             
             if (!escolha.equals("0")) {
@@ -359,17 +359,17 @@ public class Main {
                         exibirDetalhesLivro(resultados.get(index));
                     }
                 } catch (NumberFormatException e) {
-                    System.out.println(VERMELHO + "Opção inválida!" + RESET);
+                    System.out.println(VERMELHO + "Opo invlida!" + RESET);
                 }
             }
         }
     }
     
-    // ========== FUNÇÕES DO CARRINHO ==========
+    // ========== FUNES DO CARRINHO ==========
     
     private static void gerenciarCarrinho() {
         Cliente cliente = auth.getClienteLogado();
-     // Se não tem carrinho ou carrinho de outro cliente, cria novo
+     // Se no tem carrinho ou carrinho de outro cliente, cria novo
         if (carrinhoAtual == null || !carrinhoAtual.getClienteCpf().equals(cliente.getCpf())) {
             carrinhoAtual = cartService.criarCarrinho(cliente.getCpf());
         }
@@ -380,11 +380,11 @@ public class Main {
         
         while (noCarrinho) {
             System.out.println(CYAN + "\n=== MEU CARRINHO ===" + RESET);
-            System.out.println("1. ➕ Adicionar livro");
-            System.out.println("2. ➖ Remover livro");
-            System.out.println("3. 👁️  Ver carrinho");
-            System.out.println("4. 🗑️  Limpar carrinho");
-            System.out.println("0. ↩️  Voltar");
+            System.out.println("1.  Adicionar livro");
+            System.out.println("2.  Remover livro");
+            System.out.println("3.   Ver carrinho");
+            System.out.println("4.   Limpar carrinho");
+            System.out.println("0.   Voltar");
             System.out.print(VERDE + "Escolha: " + RESET);
             
             String opcao = sc.nextLine();
@@ -404,7 +404,7 @@ public class Main {
                     
                 case "4":
                     carrinho.limpar();
-                    System.out.println(VERDE + "✅ Carrinho limpo!" + RESET);
+                    System.out.println(VERDE + " Carrinho limpo!" + RESET);
                     break;
                     
                 case "0":
@@ -412,7 +412,7 @@ public class Main {
                     break;
                     
                 default:
-                    System.out.println(VERMELHO + "Opção inválida!" + RESET);
+                    System.out.println(VERMELHO + "Opo invlida!" + RESET);
             }
         }
     }
@@ -431,12 +431,12 @@ public class Main {
             }
             
             if (cartService.adicionarAoCarrinho(carrinho, isbn, quantidade)) {
-                System.out.println(VERDE + "✅ Livro adicionado ao carrinho!" + RESET);
+                System.out.println(VERDE + " Livro adicionado ao carrinho!" + RESET);
             } else {
-                System.out.println(VERMELHO + "❌ Livro não encontrado!" + RESET);
+                System.out.println(VERMELHO + " Livro no encontrado!" + RESET);
             }
         } catch (NumberFormatException e) {
-            System.out.println(VERMELHO + "Quantidade inválida!" + RESET);
+            System.out.println(VERMELHO + "Quantidade invlida!" + RESET);
         }
     }
     
@@ -456,12 +456,12 @@ public class Main {
             }
             
             if (removido) {
-                System.out.println(VERDE + "✅ Livro removido do carrinho!" + RESET);
+                System.out.println(VERDE + " Livro removido do carrinho!" + RESET);
             } else {
-                System.out.println(VERMELHO + "❌ Livro não encontrado no carrinho!" + RESET);
+                System.out.println(VERMELHO + " Livro no encontrado no carrinho!" + RESET);
             }
         } catch (NumberFormatException e) {
-            System.out.println(VERMELHO + "Quantidade inválida!" + RESET);
+            System.out.println(VERMELHO + "Quantidade invlida!" + RESET);
         }
     }
     
@@ -469,7 +469,7 @@ public class Main {
         Map<Livro, Integer> itens = carrinho.getItens();
         
         if (itens.isEmpty()) {
-            System.out.println("🛒 Seu carrinho está vazio.");
+            System.out.println(" Seu carrinho est vazio.");
         } else {
             System.out.println(CYAN + "\n=== ITENS NO CARRINHO ===" + RESET);
             
@@ -480,18 +480,18 @@ public class Main {
                 double subtotal = livro.getPreco() * quantidade;
                 total += subtotal;
                 
-                System.out.printf("📖 %s\n", livro.getTitulo());
+                System.out.printf(" %s\n", livro.getTitulo());
                 System.out.printf("   Autor: %s\n", livro.getAutores());
-                System.out.printf("   Quantidade: %d | Preço unitário: R$ %.2f\n", quantidade, livro.getPreco());
+                System.out.printf("   Quantidade: %d | Preo unitrio: R$ %.2f\n", quantidade, livro.getPreco());
                 System.out.printf("   Subtotal: R$ %.2f\n", subtotal);
                 System.out.println("-".repeat(40));
             }
             
-            System.out.printf(VERDE + "💰 TOTAL DO CARRINHO: R$ %.2f\n" + RESET, total);
+            System.out.printf(VERDE + " TOTAL DO CARRINHO: R$ %.2f\n" + RESET, total);
         }
     }
     
-    // ========== FUNÇÕES DE COMPRA ==========
+    // ========== FUNES DE COMPRA ==========
     
     @SuppressWarnings("unused")
     private static void finalizarCompra() {
@@ -503,10 +503,10 @@ public class Main {
             carrinhoAtual = cartService.criarCarrinho(cliente.getCpf());
         }
         
-        // Se carrinho já tem itens, pergunta se quer usar ou começar novo
+        // Se carrinho j tem itens, pergunta se quer usar ou comear novo
         if (!carrinhoAtual.estaVazio()) {
             System.out.println("Seu carrinho atual tem " + carrinhoAtual.getItens().size() + " item(ns).");
-            System.out.print("Deseja: 1-Usar este carrinho  2-Começar novo carrinho  3-Voltar: ");
+            System.out.print("Deseja: 1-Usar este carrinho  2-Comear novo carrinho  3-Voltar: ");
             String escolha = sc.nextLine().trim();
             
             if (escolha.equals("2")) {
@@ -518,7 +518,7 @@ public class Main {
             // Se escolher 1, continua com carrinho atual
         }
         
-        // Criar carrinho temporário
+        // Criar carrinho temporrio
         Carrinho carrinho = cartService.criarCarrinho(cliente.getCpf());
         
         System.out.println("Adicione os livros ao carrinho:");
@@ -538,17 +538,17 @@ public class Main {
                 int quantidade = Integer.parseInt(sc.nextLine());
                 
                 if (cartService.adicionarAoCarrinho(carrinho, isbn, quantidade)) {
-                    System.out.println(VERDE + "✅ Adicionado!" + RESET);
+                    System.out.println(VERDE + " Adicionado!" + RESET);
                 } else {
-                    System.out.println(VERMELHO + "❌ Livro não encontrado!" + RESET);
+                    System.out.println(VERMELHO + " Livro no encontrado!" + RESET);
                 }
             } catch (NumberFormatException e) {
-                System.out.println(VERMELHO + "Quantidade inválida!" + RESET);
+                System.out.println(VERMELHO + "Quantidade invlida!" + RESET);
             }
         }
         
         if (cartService.carrinhoVazio(carrinho)) {
-            System.out.println(VERMELHO + "❌ Carrinho vazio! Compra cancelada." + RESET);
+            System.out.println(VERMELHO + " Carrinho vazio! Compra cancelada." + RESET);
             return;
         }
         
@@ -559,15 +559,15 @@ public class Main {
         String continuar = sc.nextLine().trim();
         
         if (!continuar.equalsIgnoreCase("S")) {
-            System.out.println(AMARELO + "Compra cancelada pelo usuário." + RESET);
+            System.out.println(AMARELO + "Compra cancelada pelo usurio." + RESET);
             return;
         }
         
-        // ESCOLHER MÉTODO DE PAGAMENTO
-        System.out.println(CYAN + "\n=== MÉTODO DE PAGAMENTO ===" + RESET);
-        System.out.println("1. 💳 Cartão de Crédito");
-        System.out.println("2. 📱 PIX");
-        System.out.println("3. 📄 Boleto Bancário");
+        // ESCOLHER MTODO DE PAGAMENTO
+        System.out.println(CYAN + "\n=== MTODO DE PAGAMENTO ===" + RESET);
+        System.out.println("1.  Carto de Crdito");
+        System.out.println("2.  PIX");
+        System.out.println("3.  Boleto Bancrio");
         System.out.print(VERDE + "Escolha: " + RESET);
         
         String opcaoPagamento = sc.nextLine();
@@ -577,11 +577,11 @@ public class Main {
         switch (opcaoPagamento) {
             case "1":
                 metodo = Pagamento.MetodoPagamento.CARTAO_CREDITO;
-                System.out.println("\n💳 PAGAMENTO COM CARTÃO DE CRÉDITO");
-                System.out.print("Número do cartão (16 dígitos): ");
+                System.out.println("\n PAGAMENTO COM CARTO DE CRDITO");
+                System.out.print("Nmero do carto (16 dgitos): ");
                 String numeroCartao = sc.nextLine().trim();
                 
-                System.out.print("Nome no cartão: ");
+                System.out.print("Nome no carto: ");
                 String nomeCartao = sc.nextLine().trim();
                 
                 System.out.print("Validade (MM/AA): ");
@@ -590,9 +590,9 @@ public class Main {
                 System.out.print("CVV: ");
                 String cvv = sc.nextLine().trim();
                 
-                // Validação simples
+                // Validao simples
                 if (numeroCartao.length() != 16 || !numeroCartao.matches("\\d+")) {
-                    System.out.println(VERMELHO + "❌ Número do cartão inválido!" + RESET);
+                    System.out.println(VERMELHO + " Nmero do carto invlido!" + RESET);
                     return;
                 }
                 
@@ -601,22 +601,22 @@ public class Main {
                 
             case "2":
                 metodo = Pagamento.MetodoPagamento.PIX;
-                System.out.println("\n📱 PAGAMENTO VIA PIX");
-                System.out.println("Será gerado um código PIX para pagamento.");
-                System.out.println("O pagamento é processado instantaneamente!");
+                System.out.println("\n PAGAMENTO VIA PIX");
+                System.out.println("Ser gerado um cdigo PIX para pagamento.");
+                System.out.println("O pagamento  processado instantaneamente!");
                 dadosPagamento = "PIX";
                 break;
                 
             case "3":
                 metodo = Pagamento.MetodoPagamento.BOLETO;
-                System.out.println("\n📄 PAGAMENTO VIA BOLETO");
-                System.out.println("O boleto será gerado com vencimento em 3 dias.");
+                System.out.println("\n PAGAMENTO VIA BOLETO");
+                System.out.println("O boleto ser gerado com vencimento em 3 dias.");
                 System.out.println("Enviaremos por email: " + cliente.getEmail());
                 dadosPagamento = "BOLETO";
                 break;
                 
             default:
-                System.out.println(VERMELHO + "❌ Opção inválida!" + RESET);
+                System.out.println(VERMELHO + " Opo invlida!" + RESET);
                 return;
         }
         
@@ -632,7 +632,7 @@ public class Main {
         }
         
         // PROCESSAR PAGAMENTO
-        System.out.println("\n" + AMARELO + "⏳ Processando pagamento..." + RESET);
+        System.out.println("\n" + AMARELO + " Processando pagamento..." + RESET);
         
         try {
             // Simula delay de processamento
@@ -641,7 +641,7 @@ public class Main {
             Thread.currentThread().interrupt();
         }
         
-        // Simulação: 90% de chance de aprovação
+        // Simulao: 90% de chance de aprovao
         boolean pagamentoAprovado = Math.random() > 0.1;
         
         if (pagamentoAprovado) {
@@ -649,26 +649,26 @@ public class Main {
             NotaFiscal notaFiscal = checkout.checkout(carrinho, "COMPRA", cliente);
             
             if (notaFiscal != null) {
-                System.out.println(VERDE + "\n✅ PAGAMENTO APROVADO!" + RESET);
-                System.out.println(VERDE + "✅ COMPRA REALIZADA COM SUCESSO!" + RESET);
+                System.out.println(VERDE + "\n PAGAMENTO APROVADO!" + RESET);
+                System.out.println(VERDE + " COMPRA REALIZADA COM SUCESSO!" + RESET);
                 
                 // Gerar comprovante de pagamento
                 System.out.println("\n" + "=".repeat(50));
                 System.out.println("         COMPROVANTE DE PAGAMENTO         ");
                 System.out.println("=".repeat(50));
-                System.out.println("Método: " + metodo.toString().replace("_", " "));
+                System.out.println("Mtodo: " + metodo.toString().replace("_", " "));
                 System.out.println("Valor: R$ " + String.format("%.2f", carrinho.calcularTotal()));
                 System.out.println("Status: APROVADO");
                 System.out.println("Data: " + java.time.LocalDateTime.now());
                 
                 if (metodo == Pagamento.MetodoPagamento.PIX) {
                     System.out.println("\n--- PIX ---");
-                    System.out.println("Código: PIX-" + System.currentTimeMillis());
+                    System.out.println("Cdigo: PIX-" + System.currentTimeMillis());
                     System.out.println("Copie e cole no app do seu banco!");
                 }
                 
                 if (metodo == Pagamento.MetodoPagamento.CARTAO_CREDITO) {
-                    System.out.println("\n--- Cartão ---");
+                    System.out.println("\n--- Carto ---");
                     System.out.println("Final: **** **** **** " + dadosPagamento.substring(12));
                 }
                 
@@ -683,27 +683,27 @@ public class Main {
                 }
             }
         } else {
-            System.out.println(VERMELHO + "\n❌ PAGAMENTO RECUSADO!" + RESET);
-            System.out.println("Tente novamente com outro método.");
+            System.out.println(VERMELHO + "\n PAGAMENTO RECUSADO!" + RESET);
+            System.out.println("Tente novamente com outro mtodo.");
         }
     }
    
     private static void verUltimaNotaFiscal() {
-        System.out.println(CYAN + "\n=== NOTA FISCAL DE DEMONSTRAÇÃO ===" + RESET);
+        System.out.println(CYAN + "\n=== NOTA FISCAL DE DEMONSTRAO ===" + RESET);
         
         if (!auth.isLogado()) {
-            System.out.println(VERMELHO + "❌ Faça login primeiro!" + RESET);
+            System.out.println(VERMELHO + " Faa login primeiro!" + RESET);
             return;
         }
         
         Cliente cliente = auth.getClienteLogado();
         
         // Mostra uma nota fiscal de exemplo
-        System.out.println("Esta é uma demonstração de como ficaria uma nota fiscal:");
+        System.out.println("Esta  uma demonstrao de como ficaria uma nota fiscal:");
         System.out.println("=".repeat(50));
         System.out.println("            NOTA FISCAL DE EXEMPLO");
         System.out.println("=".repeat(50));
-        System.out.println("Número: NF-0001");
+        System.out.println("Nmero: NF-0001");
         System.out.println("Data: " + java.time.LocalDateTime.now());
         System.out.println("Cliente: " + cliente.getNome());
         System.out.println("CPF: " + cliente.getCpf());
@@ -714,10 +714,10 @@ public class Main {
         System.out.println("-".repeat(50));
         System.out.println("TOTAL: R$ 109,70");
         System.out.println("=".repeat(50));
-        System.out.println("Obrigado pela preferência!");
+        System.out.println("Obrigado pela preferncia!");
         System.out.println("=".repeat(50));
         
-        System.out.println("\n" + VERDE + "✅ Em uma compra real, a nota fiscal seria gerada automaticamente após o pagamento." + RESET);
+        System.out.println("\n" + VERDE + " Em uma compra real, a nota fiscal seria gerada automaticamente aps o pagamento." + RESET);
     }
     
     private static void meusPedidos() {
@@ -725,7 +725,7 @@ public class Main {
         
         System.out.println(CYAN + "\n=== MEUS PEDIDOS ===" + RESET);
         
-     // DEBUG: Mostra o que está sendo buscado
+     // DEBUG: Mostra o que est sendo buscado
         System.out.println("[DEBUG] Buscando pedidos para CPF: " + cliente.getCpf());
         
         List<Pedido> todosPedidos = reports.relatorioVendas();
@@ -738,10 +738,10 @@ public class Main {
         System.out.println("[DEBUG] Meus pedidos encontrados: " + meusPedidos.size());
         
         if (meusPedidos.isEmpty()) {
-            System.out.println("📭 Você ainda não realizou nenhum pedido.");
-            System.out.println("Comece a comprar na opção 'Finalizar compra'!");
+            System.out.println(" Voc ainda no realizou nenhum pedido.");
+            System.out.println("Comece a comprar na opo 'Finalizar compra'!");
         } else {
-            System.out.println("📋 Total de pedidos: " + meusPedidos.size());
+            System.out.println(" Total de pedidos: " + meusPedidos.size());
             System.out.println("-".repeat(60));
             
             for (int i = 0; i < meusPedidos.size(); i++) {
@@ -755,20 +755,20 @@ public class Main {
         }
     }
     
-    // ========== FUNÇÕES DO PERFIL ==========
+    // ========== FUNES DO PERFIL ==========
     
     private static void meuPerfil() {
         Cliente cliente = auth.getClienteLogado();
         
         System.out.println(CYAN + "\n=== MEU PERFIL ===" + RESET);
-        System.out.println("👤 Nome: " + cliente.getNome());
-        System.out.println("📧 Email: " + cliente.getEmail());
-        System.out.println("🔐 CPF: " + cliente.getCpf());
-        System.out.println("🏠 Endereço: " + cliente.getEndereco());
+        System.out.println(" Nome: " + cliente.getNome());
+        System.out.println(" Email: " + cliente.getEmail());
+        System.out.println(" CPF: " + cliente.getCpf());
+        System.out.println(" Endereo: " + cliente.getEndereco());
         
-        System.out.println("\n1. ✏️  Editar perfil");
-        System.out.println("2. 🔐 Alterar senha");
-        System.out.println("0. ↩️  Voltar");
+        System.out.println("\n1.   Editar perfil");
+        System.out.println("2.  Alterar senha");
+        System.out.println("0.   Voltar");
         System.out.print(VERDE + "Escolha: " + RESET);
         
         String opcao = sc.nextLine();
@@ -786,7 +786,7 @@ public class Main {
                 break;
                 
             default:
-                System.out.println(VERMELHO + "Opção inválida!" + RESET);
+                System.out.println(VERMELHO + "Opo invlida!" + RESET);
         }
     }
     
@@ -799,14 +799,14 @@ public class Main {
         String novoEmail = sc.nextLine().trim();
         if (novoEmail.isEmpty()) novoEmail = cliente.getEmail();
         
-        System.out.print("Novo endereço (atual: " + cliente.getEndereco() + "): ");
+        System.out.print("Novo endereo (atual: " + cliente.getEndereco() + "): ");
         String novoEndereco = sc.nextLine().trim();
         if (novoEndereco.isEmpty()) novoEndereco = cliente.getEndereco();
         
         if (auth.atualizarPerfil(novoEmail, novoEndereco)) {
-            System.out.println(VERDE + "✅ Perfil atualizado com sucesso!" + RESET);
+            System.out.println(VERDE + " Perfil atualizado com sucesso!" + RESET);
         } else {
-            System.out.println(VERMELHO + "❌ Erro ao atualizar perfil!" + RESET);
+            System.out.println(VERMELHO + " Erro ao atualizar perfil!" + RESET);
         }
     }
     
@@ -819,7 +819,7 @@ public class Main {
         Cliente cliente = auth.getClienteLogado();
         
         if (!cliente.validarSenha(senhaAtual)) {
-            System.out.println(VERMELHO + "❌ Senha atual incorreta!" + RESET);
+            System.out.println(VERMELHO + " Senha atual incorreta!" + RESET);
             return;
         }
         
@@ -830,17 +830,17 @@ public class Main {
         String confirmarSenha = sc.nextLine().trim();
         
         if (!novaSenha.equals(confirmarSenha)) {
-            System.out.println(VERMELHO + "❌ As senhas não coincidem!" + RESET);
+            System.out.println(VERMELHO + " As senhas no coincidem!" + RESET);
             return;
         }
         
         if (novaSenha.length() < 4) {
-            System.out.println(VERMELHO + "❌ A senha deve ter pelo menos 4 caracteres!" + RESET);
+            System.out.println(VERMELHO + " A senha deve ter pelo menos 4 caracteres!" + RESET);
             return;
         }
         
         cliente.setSenha(novaSenha);
-        System.out.println(VERDE + "✅ Senha alterada com sucesso!" + RESET);
+        System.out.println(VERDE + " Senha alterada com sucesso!" + RESET);
     }
     
     // ========== DADOS DE EXEMPLO ==========
@@ -871,11 +871,12 @@ public class Main {
         catalog.cadastrarLivro(livro4, 12);
         
         // Criar alguns clientes de exemplo
-        auth.cadastrar("12345678901", "João Silva", "joao@email.com", "senha123");
+        auth.cadastrar("12345678901", "Joo Silva", "joao@email.com", "senha123");
         auth.cadastrar("98765432100", "Maria Santos", "maria@email.com", "senha456");
         
-        System.out.println(VERDE + "✅ Dados de exemplo carregados com sucesso!" + RESET);
-        System.out.println("• 4 livros cadastrados no catálogo");
-        System.out.println("• 2 clientes de exemplo disponíveis para login");
+        System.out.println(VERDE + " Dados de exemplo carregados com sucesso!" + RESET);
+        System.out.println(" 4 livros cadastrados no catlogo");
+        System.out.println(" 2 clientes de exemplo disponveis para login");
     }
 }
+
