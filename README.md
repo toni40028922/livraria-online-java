@@ -138,19 +138,31 @@ LivrariaOnline/
 ### 👨‍💻 ToniJosué Barbosa de Araújo
 - **Curso:** Tecnologia em Telemática
 - **GitHub:** [@Toni-araujo](https://github.com/Toni-araujo)
-- **Contribuições:** Arquitetura geral, sistema de pagamento, checkout, interface de usuário, integração de serviços
+**Principais Contribuições:**
+- Arquitetura completa do sistema
+- Implementação de todas as funcionalidades core
+- Sistema de pagamentos (cartão, PIX, boleto)
+- Interface de usuário com menus coloridos
+- Integração de serviços e persistência em arquivos
+- Lógica de negócio completa
 
-### 👨‍💻 Samuel Clementino da Costa 
+### 🤝 Contribuição & Revisão
+**👨‍💻 Samuel Clementino da Costa**  
 - **Curso:** Tecnologia em Telemática
 - **GitHub:** [@SamuelClementino](https://github.com/SamuelClementino)
-- **Contribuições:** Modelos de dados (Livro, Cliente, Pedido), sistema de estoque, validações, testes, documentação
+**Contribuições:**
+- Revisão de código e documentação
+- Testes auxiliares e validações
+- Suporte na organização do projeto
 
-### 🤝 Trabalho em Equipe
-Este projeto foi desenvolvido em parceria, com:
-- Revisões de código mútuas
-- Divisão clara de responsabilidades
-- Testes colaborativos
-- Documentação compartilhada
+---
+
+## 📋 Modelo de Trabalho
+
+O projeto foi desenvolvido seguindo metodologia de **desenvolvimento colaborativo**:
+- **ToniJosué**: Responsável pelo desenvolvimento técnico principal
+- **Samuel**: Atuou como revisor e validador dos requisitos
+- **Ambos**: Participaram das definições de arquitetura e testes finais
 
 ---
 
