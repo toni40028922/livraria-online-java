@@ -1,5 +1,5 @@
 // service/CheckoutService.java - COM PAGAMENTO
-package service;  // ATUALIZADO EM 09/12/2025
+package service;  // ATUALIZADO EM 15/12/2025
 
 import model.*;
 import repository.EstoqueRepository;
@@ -10,21 +10,26 @@ public class CheckoutService {
     private EstoqueRepository estoqueRepo = new EstoqueRepository();
     private PedidoRepository pedidoRepo = new PedidoRepository();
     
-    // Método principal
     public NotaFiscal checkout(Carrinho carrinho, String tipo, Cliente cliente) {
         // 1. Verificar estoque
         if (!verificarEstoque(carrinho)) {
+            System.out.println("❌ Falha na verificação de estoque!");
             return null;
         }
         
         // 2. Reduzir estoque
-        reduzirEstoque(carrinho);
+        boolean estoqueReduzido = reduzirEstoque(carrinho);
+        if (!estoqueReduzido) {
+            System.out.println("❌ Falha ao reduzir estoque!");
+            return null;
+        }
         
         // 3. Criar pedido
-        Pedido pedido = new Pedido(carrinho.getClienteCpf(), carrinho.getItens(), tipo); // esta linha ainda continua com x
+        Pedido pedido = new Pedido(carrinho.getClienteCpf(), carrinho.getItens(), tipo);
         
         // 4. Salvar pedido
         pedidoRepo.salvar(pedido);
+        System.out.println("✅ Pedido salvo: #" + pedido.getId());
         
         // 5. Gerar Nota Fiscal
         NotaFiscal notaFiscal = new NotaFiscal(pedido, cliente, tipo);
@@ -32,56 +37,43 @@ public class CheckoutService {
         return notaFiscal;
     }
     
-    // Método para checkout com pagamento
-    public boolean checkoutComPagamento(Carrinho carrinho, String tipo, Cliente cliente, 
-                                       Pagamento.MetodoPagamento metodo) {
-        
-        NotaFiscal notaFiscal = checkout(carrinho, tipo, cliente);
-        
-        if (notaFiscal == null) {
-            return false;
-        }
-        
-        // Cria pagamento
-        Pagamento pagamento = new Pagamento(
-            notaFiscal.getPedido().getId(),
-            carrinho.calcularTotal(), // esta linha ainda continua com x
-            metodo
-        );
-        
-        // Processa pagamento
-        boolean aprovado = pagamento.processarPagamento("");
-        
-        if (aprovado) {
-            System.out.println(notaFiscal.imprimir());
-            System.out.println(pagamento.gerarComprovante());
-            carrinho.limpar(); // esta linha ainda continua com x
-            return true;
-        } else {
-            System.out.println("❌ Pagamento recusado!");
-            return false;
-        }
-    }
-    
     private boolean verificarEstoque(Carrinho carrinho) {
-        for (Map.Entry<Livro, Integer> entry : carrinho.getItens().entrySet()) { // esta linha ainda continua com x
+        for (Map.Entry<Livro, Integer> entry : carrinho.getItens().entrySet()) {
             Livro livro = entry.getKey();
             int quantidade = entry.getValue();
             int estoque = estoqueRepo.getQuantidade(livro.getIsbn());
             
+            System.out.println("🔍 [DEBUG] ISBN: " + livro.getIsbn() + 
+                    " | Estoque no repositório: " + estoque + 
+                    " | Quantidade no catálogo: " + 
+                    new service.CatalogService().estoque(livro.getIsbn()));
+            
+            System.out.println("🔍 Verificando estoque: " + livro.getTitulo() + 
+                             " - Estoque: " + estoque + ", Necessário: " + quantidade);
+            
             if (estoque < quantidade) {
-                System.out.println("Estoque insuficiente: " + livro.getTitulo());
+                System.out.println("❌ Estoque insuficiente: " + livro.getTitulo());
                 return false;
             }
         }
         return true;
     }
     
-    private void reduzirEstoque(Carrinho carrinho) {
-        for (Map.Entry<Livro, Integer> entry : carrinho.getItens().entrySet()) { // esta linha ainda continua com x
+    private boolean reduzirEstoque(Carrinho carrinho) {
+        boolean sucesso = true;
+        for (Map.Entry<Livro, Integer> entry : carrinho.getItens().entrySet()) {
             Livro livro = entry.getKey();
             int quantidade = entry.getValue();
-            estoqueRepo.reduzir(livro.getIsbn(), quantidade);
+            
+            boolean reduzido = estoqueRepo.reduzir(livro.getIsbn(), quantidade);
+            if (reduzido) {
+                System.out.println("📉 Estoque reduzido: " + livro.getTitulo() + 
+                                 " -" + quantidade + " unidades");
+            } else {
+                System.out.println("❌ Falha ao reduzir estoque de: " + livro.getTitulo());
+                sucesso = false;
+            }
         }
+        return sucesso;
     }
 }
