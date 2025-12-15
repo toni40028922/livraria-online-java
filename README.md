@@ -138,6 +138,7 @@ LivrariaOnline/
 ### 👨‍💻 ToniJosué Barbosa de Araújo
 - **Curso:** Tecnologia em Telemática
 - **GitHub:** [@Toni-araujo](https://github.com/Toni-araujo)
+  
 **Principais Contribuições:**
 - Arquitetura completa do sistema
 - Implementação de todas as funcionalidades core
@@ -145,11 +146,12 @@ LivrariaOnline/
 - Interface de usuário com menus coloridos
 - Integração de serviços e persistência em arquivos
 - Lógica de negócio completa
-
+  
 ### 🤝 Contribuição & Revisão
 **👨‍💻 Samuel Clementino da Costa**  
 - **Curso:** Tecnologia em Telemática
 - **GitHub:** [@SamuelClementino](https://github.com/SamuelClementino)
+  
 **Contribuições:**
 - Revisão de código e documentação
 - Testes auxiliares e validações
